@@ -35,11 +35,14 @@ public class AddServlet  extends HttpServlet
 //			out.println("Addition is:"+" "+ k);
 			
 			
-			//square of k
-			req.setAttribute("k",k);
-			RequestDispatcher rd =req.getRequestDispatcher("Sqr");
-			rd.forward(req, res);
+		   				//square of k
+//			req.setAttribute("k",k);
+//			RequestDispatcher rd =req.getRequestDispatcher("Sqr");
+//			rd.forward(req, res);
 			
+		   
+		       // using senddirect() method
+		   res.sendRedirect("Sqr?k="+k);
 		}
 	
 
