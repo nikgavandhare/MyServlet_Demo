@@ -44,6 +44,7 @@ public class AddServlet  extends HttpServlet
 			
 		   
 		   
+<<<<<<< HEAD
 		   	// ******************** using Httpsesion() method *****************
 //		   HttpSession session =req.getSession();
 //		   session.setAttribute("k", k);
@@ -55,6 +56,15 @@ public class AddServlet  extends HttpServlet
 		   
 		       // ************** using senddirect() method *****************
 		   res.sendRedirect("Sqr");    // URL rewritting
+=======
+		   	// ******************** using HttpSesion() method *****************
+		   HttpSession session =req.getSession();
+		   session.setAttribute("k", k);
+		   
+		   
+		       // ************** using sendRedirect() method *****************
+		   res.sendRedirect("Sqr?k="+k);    // URL rewritting
+>>>>>>> a66bcd4c02a4634e4fdff09471e767dc6ef147ba
 		   
 		
 		}
