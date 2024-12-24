@@ -8,6 +8,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 public class AddServlet  extends HttpServlet
 {
@@ -35,14 +36,22 @@ public class AddServlet  extends HttpServlet
 //			out.println("Addition is:"+" "+ k);
 			
 			
-		   				//square of k
+		   		// ***************** square of k *********************
 //			req.setAttribute("k",k);
 //			RequestDispatcher rd =req.getRequestDispatcher("Sqr");
 //			rd.forward(req, res);
 			
 		   
-		       // using senddirect() method
-		   res.sendRedirect("Sqr?k="+k);
+		   
+		   	// ******************** using Httpsesion() method *****************
+		   HttpSession session =req.getSession();
+		   session.setAttribute("k", k);
+		   
+		   
+		       // ************** using senddirect() method *****************
+		   res.sendRedirect("Sqr?k="+k);    // URL rewritting
+		   
+		
 		}
 	
 

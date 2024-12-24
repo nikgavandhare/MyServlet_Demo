@@ -6,6 +6,7 @@ import java.io.PrintWriter;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 public class SqrServlet extends HttpServlet
 {
@@ -14,8 +15,10 @@ public class SqrServlet extends HttpServlet
 			
 //		int k=(int) req.getAttribute("k");   // this for RequestDispatcher()    .... getAttribute()
 	
-		int k=Integer.parseInt(req.getParameter("k"));  // this is for sendRedirect()   ... getparameter()
+//		int k=Integer.parseInt(req.getParameter("k"));  // this is for sendRedirect()   ... getparameter()
 		
+		HttpSession session=req.getSession();       // this is using Httpsession()    .... getAttribute()
+		int k = (int) session.getAttribute("k");
 		k=k*k;
 				
 		PrintWriter out= res.getWriter();
