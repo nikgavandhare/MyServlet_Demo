@@ -43,12 +43,12 @@ public class AddServlet  extends HttpServlet
 			
 		   
 		   
-		   	// ******************** using Httpsesion() method *****************
+		   	// ******************** using HttpSesion() method *****************
 		   HttpSession session =req.getSession();
 		   session.setAttribute("k", k);
 		   
 		   
-		       // ************** using senddirect() method *****************
+		       // ************** using sendRedirect() method *****************
 		   res.sendRedirect("Sqr?k="+k);    // URL rewritting
 		   
 		
